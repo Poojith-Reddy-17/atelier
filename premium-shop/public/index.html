@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f5f0" />
+  <meta name="description" content="Thoughtfully selected essentials for everyday living." />
+  <title>Atelier — Everyday, considered.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="announcement">A little more considered. Complimentary delivery on orders over ₹2,500.</div>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Atelier home">atelier<span>.</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#shop">Shop all</a><a href="#story">Our philosophy</a><a href="#newsletter">Journal</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button account-button" id="accountBtn" aria-label="Account"><span class="icon">♙</span><span class="action-label">Account</span></button>
+      <button class="icon-button" id="cartBtn" aria-label="Open shopping bag"><span class="icon">♧</span><span class="action-label">Bag</span><span class="cart-count" id="cartCount">0</span></button>
+      <button class="menu-button" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">THE EVERYDAY EDIT · VOL. 01</p>
+        <h1>Good things.<br><em>Well chosen.</em></h1>
+        <p class="hero-description">A thoughtful collection of everyday essentials, made to be used, loved, and kept close.</p>
+        <a class="button button-dark" href="#shop">Explore the collection <span aria-hidden="true">↗</span></a>
+        <div class="hero-note"><span class="note-line"></span><span>Less, but better.</span></div>
+      </div>
+      <div class="hero-image-wrap">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1500&q=90" alt="Quiet, sunlit contemporary interior" />
+        <div class="image-stamp"><span>MADE FOR</span><strong>daily<br/>living</strong><span>EST. 2024</span></div>
+      </div>
+      <div class="hero-index">01 — 04</div>
+    </section>
+    <section class="benefits" aria-label="Store benefits">
+      <div><span>✳</span><p>Thoughtfully selected</p></div><div><span>↗</span><p>Quality over quantity</p></div><div><span>♡</span><p>Made for the everyday</p></div><div><span>⌁</span><p>Easy 7-day returns*</p></div>
+    </section>
+    <section class="shop-section section-pad" id="shop">
+      <div class="section-heading">
+        <div><p class="eyebrow">A FEW GOOD THINGS</p><h2>Find your <em>everyday.</em></h2></div>
+        <p class="section-intro">Useful objects. Honest materials. A little joy in the ordinary.</p>
+      </div>
+      <div class="shop-tools"><div class="category-filters" id="categoryFilters"><button class="filter active" data-category="All">All pieces</button></div><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search the collection" aria-label="Search products" /></label></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"><div class="loading-state">Curating the collection…</div></div>
+      <p class="catalog-footnote">A considered edit, updated from time to time. <span id="productCount"></span></p>
+    </section>
+    <section class="story-section" id="story">
+      <div class="story-image"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="Natural textures and warm neutral home details" loading="lazy" /></div>
+      <div class="story-copy"><p class="eyebrow">OUR PHILOSOPHY</p><h2>Keep what<br/><em>matters.</em></h2><p>We believe the things around us should earn their place. That means considered design, useful details, and quality you can feel every day.</p><p>Not more things. Just better ones.</p><a href="#shop" class="text-link">Meet the collection <span>↗</span></a></div>
+    </section>
+    <section class="newsletter-section" id="newsletter"><p class="eyebrow">NOTES FROM ATELIER</p><h2>A little good in<br/><em>your inbox.</em></h2><p>New arrivals, thoughtful finds, and occasional notes on living well.</p><form id="newsletterForm" class="newsletter-form"><label class="sr-only" for="newsletterEmail">Email address</label><input id="newsletterEmail" type="email" placeholder="Your email address" required /><button type="submit" aria-label="Subscribe">Join us ↗</button></form><p class="newsletter-note" id="newsletterMessage">No noise. Unsubscribe whenever.</p></section>
+  </main>
+  <footer class="site-footer"><a class="wordmark" href="#top">atelier<span>.</span></a><p>Considered goods for everyday living.</p><div><a href="#shop">Shop</a><a href="mailto:hello@example.com">Contact</a><a href="#top">Back to top ↑</a></div><small>© <span id="year"></span> Atelier Goods. Thoughtfully made.</small></footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="side-panel" id="cartPanel" aria-label="Shopping bag" aria-hidden="true"><div class="panel-header"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your bag <span id="bagHeadingCount">(0)</span></h2></div><button class="close-button" data-close aria-label="Close bag">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-empty" id="cartEmpty"><span class="empty-icon">♧</span><h3>A little room for good things.</h3><p>Your bag is currently empty.</p><button class="button button-dark" id="continueShopping">Explore the collection</button></div><div class="cart-summary" id="cartSummary"><div class="subtotal"><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div><p>Shipping and taxes calculated at checkout.</p><button class="button button-dark full-button" id="checkoutBtn">Continue to checkout <span>↗</span></button><button class="text-link continue-link" id="keepShopping">Keep browsing</button></div></aside>
+  <section class="modal" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountTitle" hidden><button class="close-button modal-close" data-close aria-label="Close account">×</button><p class="eyebrow">WELCOME TO ATELIER</p><h2 id="accountTitle">Good to see you.</h2><p class="modal-subtitle" id="accountSubtitle">Sign in to see your orders and keep the good things close.</p><div class="auth-tabs"><button class="auth-tab active" data-auth-mode="login">Sign in</button><button class="auth-tab" data-auth-mode="register">Create account</button></div><form id="authForm" class="stack-form"><label id="nameField" hidden>Your name<input name="name" autocomplete="name" minlength="2" maxlength="80" /></label><label>Email address<input name="email" type="email" autocomplete="email" required /></label><label>Password<input name="password" type="password" autocomplete="current-password" minlength="10" required /></label><button class="button button-dark full-button" type="submit" id="authSubmit">Sign in ↗</button><p class="form-message" id="authMessage" role="status"></p></form><div id="signedInView" hidden><p id="signedInGreeting"></p><button class="button button-dark full-button" id="viewOrdersBtn">View my orders</button><button class="text-link" id="logoutBtn">Sign out</button></div></section>
+  <section class="modal checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" hidden><button class="close-button modal-close" data-close aria-label="Close checkout">×</button><p class="eyebrow">ALMOST YOURS</p><h2 id="checkoutTitle">A few final details.</h2><p class="modal-subtitle">Your order is carefully packed after checkout.</p><form id="checkoutForm" class="stack-form"><label>Full name<input name="customerName" autocomplete="name" required maxlength="100" /></label><label>Email address<input name="email" type="email" autocomplete="email" required maxlength="160" /></label><label>Delivery address<textarea name="address" autocomplete="street-address" required maxlength="300" rows="2"></textarea></label><div class="form-row"><label>City<input name="city" autocomplete="address-level2" required maxlength="100" /></label><label>Postal code<input name="postalCode" autocomplete="postal-code" required maxlength="20" /></label></div><div class="payment-note"><span>✓</span><div><strong>Cash on delivery</strong><small>Pay when your order arrives. Online payment is not enabled in this starter.</small></div></div><div class="checkout-total"><span>Order total</span><strong id="checkoutTotal">₹0</strong></div><button class="button button-dark full-button" type="submit">Place my order <span>↗</span></button><p class="form-message" id="checkoutMessage" role="status"></p></form></section>
+  <section class="modal orders-modal" id="ordersModal" role="dialog" aria-modal="true" aria-labelledby="ordersTitle" hidden><button class="close-button modal-close" data-close aria-label="Close orders">×</button><p class="eyebrow">YOUR ATELIER ACCOUNT</p><h2 id="ordersTitle">Your orders.</h2><div id="ordersList" class="orders-list"></div></section>
+  <section class="modal admin-modal" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle" hidden><button class="close-button modal-close" data-close aria-label="Close admin">×</button><p class="eyebrow">STORE MANAGEMENT</p><h2 id="adminTitle">Admin studio.</h2><form id="productForm" class="stack-form"><h3>Add a product</h3><label>Product name<input name="name" required maxlength="120" /></label><div class="form-row"><label>Category<input name="category" required maxlength="60" /></label><label>Price (₹)<input name="price" type="number" min="0" step="0.01" required /></label></div><label>Description<textarea name="description" required maxlength="1000" rows="2"></textarea></label><label>Image URL (HTTPS)<input name="imageUrl" type="url" placeholder="https://…" required /></label><div class="form-row"><label>Stock<input name="stock" type="number" min="0" value="10" required /></label><label>Badge (optional)<input name="badge" maxlength="40" /></label></div><button class="button button-dark full-button" type="submit">Add product ↗</button><p class="form-message" id="adminMessage" role="status"></p></form><hr/><h3>Recent orders</h3><div id="adminOrders" class="orders-list"></div></section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
